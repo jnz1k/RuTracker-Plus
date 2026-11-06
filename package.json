@@ -1,0 +1,15 @@
+{
+  "name": "rutracker-plus",
+  "version": "2.7.0",
+  "private": true,
+  "description": "Локальные проверки RuTracker Plus",
+  "scripts": {
+    "test": "node tests/dom.cjs && node tests/marks.cjs && node tests/options.cjs && node tests/ratings.cjs && node tests/rating-ui.cjs && node tests/defensive.cjs"
+  },
+  "devDependencies": {
+    "jsdom": "30.1.2"
+  },
+  "engines": {
+    "node": "^22.22.2 || ^24.15.0 || >=26.0.0"
+  }
+}

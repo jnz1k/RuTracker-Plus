@@ -1,0 +1,40 @@
+{
+  "manifest_version": 3,
+  "name": "RuTracker Plus",
+  "description": "Бесконечная прокрутка, метки качества, скрытие рекламы и сортировка по сидам.",
+  "version": "2.7.0",
+  "content_scripts": [
+    {
+      "matches": ["*://*.rutracker.org/*", "*://*.rutracker.net/*"],
+      "css": ["rutracker.org.css"],
+      "js": ["settings.js", "content-script.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "icons": {
+    "16": "icon16.png",
+    "19": "icon19.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "author": "jnz",
+  "permissions": ["storage"],
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
+  "action": {
+    "default_title": "RuTracker Plus — настройки",
+    "default_popup": "options.html",
+    "default_icon": {
+      "16": "icon16.png",
+      "19": "icon19.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "host_permissions": ["https://kinopoiskapiunofficial.tech/*", "https://api.kinodata.space/*"]
+}

@@ -1,0 +1,189 @@
+/* Скрываем только известные рекламные контейнеры, не строки по их позиции. */
+html.rtp-hide-ads #ddest-bn-1,
+html.rtp-hide-ads #idx-3,
+html.rtp-hide-ads #bn-tio-1,
+html.rtp-hide-ads #bn-bot-wrap,
+html.rtp-hide-ads #adriver-240x120,
+html.rtp-hide-ads #logo td.tCenter div.tCenter.bCenter,
+html.rtp-hide-ads #adfx-1,
+html.rtp-hide-ads #idx-mgid,
+html.rtp-hide-ads #bn-top-1,
+html.rtp-hide-ads #bgn-topic,
+html.rtp-hide-ads #bn-idx-3,
+html.rtp-hide-ads .bn-idx,
+html.rtp-hide-ads #brand-bn-wrap,
+html.rtp-hide-ads #bn-idx-marathonbet,
+html.rtp-hide-ads #bn-idx-2,
+html.rtp-hide-ads #bn-idx,
+html.rtp-hide-ads #bn-top-stub,
+html.rtp-hide-ads td.pad_2 > iframe {
+  display: none !important;
+}
+a.torTopic.rtn-voice {
+  color: var(--rtn-voiceLight, #8a4300) !important;
+}
+a.torTopic.rtn-voice.rtn-dark {
+  color: var(--rtn-voiceDark, #ffca72) !important;
+}
+.rtn-badges {
+  display: inline;
+}
+.rtn-badge {
+  color: #fff !important;
+  border-color: #ffffff60;
+}
+.rtn-badge-hd {
+  background: var(--rtn-hd, #075985) !important;
+  color: var(--rtn-text-hd, #fff) !important;
+}
+.rtn-badge-fhd {
+  background: var(--rtn-fhd, #166534) !important;
+  color: var(--rtn-text-fhd, #fff) !important;
+}
+.rtn-badge-4k {
+  background: var(--rtn-4k, #6b21a8) !important;
+  color: var(--rtn-text-4k, #fff) !important;
+}
+.rtn-badge-8k {
+  background: var(--rtn-8k, #9d174d) !important;
+  color: var(--rtn-text-8k, #fff) !important;
+}
+.rtn-badge-source {
+  background: var(--rtn-source, #155e75) !important;
+  color: var(--rtn-text-source, #fff) !important;
+}
+.rtn-badge-sd {
+  background: var(--rtn-sd, #475569) !important;
+  color: var(--rtn-text-sd, #fff) !important;
+}
+.rtn-badge-cam {
+  background: var(--rtn-cam, #991b1b) !important;
+  color: var(--rtn-text-cam, #fff) !important;
+}
+.rtn-badge-hdr {
+  background: var(--rtn-hdr, #854d0e) !important;
+  color: var(--rtn-text-hdr, #fff) !important;
+}
+.rtn-sort {
+  cursor: pointer;
+  font: inherit;
+  font-size: 11px;
+}
+.rtn-status {
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  z-index: 2147483647;
+  max-width: min(480px, 90vw);
+  padding: 12px 16px;
+  border: 1px solid #818a97;
+  border-radius: 8px;
+  background: #fff;
+  color: #20242a;
+  box-shadow: 0 3px 14px #0003;
+  font:
+    13px/1.5 Arial,
+    sans-serif;
+}
+.rtn-status[hidden] {
+  display: none;
+}
+.rtn-status button {
+  cursor: pointer;
+}
+
+.rtn-loader {
+  text-align: center;
+  padding: 18px;
+}
+.rtn-loader[hidden] {
+  display: none !important;
+}
+.rtn-loader button {
+  padding: 9px 24px;
+  border: 1px solid #71849b;
+  border-radius: 6px;
+  background: #244568;
+  color: #fff;
+  cursor: pointer;
+  font:
+    600 13px Arial,
+    sans-serif;
+}
+.rtn-loader button:disabled {
+  opacity: 0.65;
+  cursor: default;
+}
+a.rtn-uhd-search {
+  border-color: #b4a0f0;
+  background: #473273 !important;
+  color: #fff !important;
+}
+a.rtn-uhd-search:hover {
+  background: #644697 !important;
+}
+
+.rtp-marks {
+  display: inline;
+}
+.rtp-mark {
+  border-color: #728199;
+  background: #273445;
+  color: #e7edf5;
+  cursor: pointer;
+}
+.rtp-mark-favorite[aria-pressed='true'] {
+  background: #6b4806;
+  border-color: #ffc85c;
+  color: #fff1ce;
+}
+.rtp-mark-watched[aria-pressed='true'] {
+  background: #145432;
+  border-color: #65d995;
+  color: #e3ffed;
+}
+.rtp-mark:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+/* Единая высота и шрифт; ширина по тексту устраняет пустое место в коротких метках. */
+.rtn-badge,
+a.rtn-uhd-search,
+.rtp-mark,
+a.rtp-kp,
+a.rtp-imdb {
+  display: inline-flex;
+  box-sizing: border-box;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  width: auto;
+  height: 2em;
+  margin: 2px 4px 2px 0;
+  padding: 0 6px;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 4px;
+  font:
+    700 var(--rtn-badge-size, 12px)/1 Arial,
+    sans-serif;
+  letter-spacing: normal;
+  white-space: nowrap;
+  text-decoration: none !important;
+}
+.rtn-badges,
+.rtp-marks {
+  margin-left: 4px;
+}
+
+a.rtp-kp {
+  background: var(--rtn-kpColor, #6d3700) !important;
+  color: var(--rtn-text-kpColor, #fff) !important;
+  border-color: var(--rtn-kpColor, #6d3700);
+}
+a.rtp-imdb {
+  background: var(--rtn-imdbColor, #f5c518) !important;
+  color: var(--rtn-text-imdbColor, #101820) !important;
+  border-color: var(--rtn-imdbColor, #f5c518);
+}

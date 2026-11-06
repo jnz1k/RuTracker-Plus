@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>RuTracker Plus — настройки</title>
+    <link rel="stylesheet" href="options.css" />
+  </head>
+  <body>
+    <main>
+      <header>
+        <img src="icon48.png" width="36" height="36" alt="" />
+        <div>
+          <h1>RuTracker Plus</h1>
+          <p>Настройки расширения</p>
+        </div>
+      </header>
+      <!-- Оформление и функции сохраняются вместе; API-ключи имеют отдельные кнопки. -->
+      <form id="settings">
+        <fieldset>
+          <legend>Загрузка страниц</legend>
+          <label><input type="checkbox" name="pagination" /> Подгрузка следующих страниц</label>
+          <label
+            ><input type="checkbox" name="autoLoad" /> Загружать автоматически при прокрутке</label
+          >
+          <p class="hint">
+            Если автозагрузка выключена, внизу списка или темы будет кнопка «Загрузить ещё».
+          </p>
+        </fieldset>
+        <fieldset>
+          <legend>Функции</legend>
+          <label
+            ><input type="checkbox" name="localMarks" /> Кнопки «Избранное» и «Уже смотрел»</label
+          >
+          <label><input type="checkbox" name="hideAds" /> Скрывать рекламные блоки</label>
+          <label><input type="checkbox" name="badges" /> Значки разрешения и источника видео</label>
+          <label
+            ><input type="checkbox" name="voiceHighlight" /> Выделять названия с MVO / AVO / DVO /
+            VO</label
+          >
+          <label><input type="checkbox" name="sorting" /> Сортировка по сидам ↓ / ↑</label>
+          <label
+            ><input type="checkbox" name="uhdSearch" /> Ссылки «Найти UHD» у раздач и в теме</label
+          >
+          <label><input type="checkbox" name="newTab" /> Открывать поиск UHD в новой вкладке</label>
+          <p class="hint">
+            Поиск по названию и году в разделах 1457 и 1940. Если выключить новую вкладку, результат
+            откроется в текущей.
+          </p>
+        </fieldset>
+        <fieldset>
+          <legend>IMDb — Kinodata</legend>
+          <label><input type="checkbox" name="imdbRatings" /> Показывать рейтинг IMDb</label>
+          <label
+            >API-ключ Kinodata
+            <input
+              id="imdb-key"
+              type="password"
+              autocomplete="off"
+              spellcheck="false"
+              placeholder="kd_live_…"
+          /></label>
+          <button type="button" id="imdb-save">Сохранить ключ</button>
+          <button type="button" id="imdb-test">Проверить</button>
+          <p id="imdb-status" role="status"></p>
+          <p class="hint">
+            Личный ключ хранится локально. Название и год передаются в api.kinodata.space. Кэш IMDb
+            — 5 минут. Пустое поле при сохранении удаляет ключ.
+          </p>
+        </fieldset>
+        <fieldset>
+          <legend>Рейтинги и Кинопоиск</legend>
+          <label><input type="checkbox" name="ratingOnClick" /> Показать рейтинг по нажатию</label>
+          <p class="hint">
+            Включено: запрос только после нажатия на значок. Выключено: загрузка рейтингов видимых
+            раздач автоматически.
+          </p>
+          <label><input type="checkbox" name="kpRatings" /> Показывать рейтинг Кинопоиска</label>
+          <label
+            >API-ключ
+            <input
+              id="kp-key"
+              type="password"
+              autocomplete="off"
+              spellcheck="false"
+              placeholder="Ключ kinopoiskapiunofficial.tech"
+          /></label>
+          <button type="button" id="kp-save">Сохранить ключ</button>
+          <button type="button" id="kp-test">Проверить</button>
+          <p id="kp-status" role="status"></p>
+          <p class="hint">
+            Ключ хранится локально. Для рейтингов название и год фильма передаются в
+            kinopoiskapiunofficial.tech. Кэш — 24 часа. Пустой ключ при сохранении удаляет ранее
+            сохранённый ключ.
+          </p>
+        </fieldset>
+        <fieldset>
+          <legend>Оформление</legend>
+          <label
+            >Размер значков
+            <select name="badgeSize">
+              <option value="9">9 px</option>
+              <option value="10">10 px</option>
+              <option value="12">12 px</option>
+              <option value="14">14 px</option>
+              <option value="16">16 px</option>
+              <option value="18">18 px</option>
+            </select></label
+          >
+          <div id="colors" class="colors"></div>
+          <div id="preview" aria-label="Предпросмотр значков">
+            <span data-kind="hd">HD</span><span data-kind="fhd">Full HD</span
+            ><span data-kind="4k">4K</span><span data-kind="cam">CAM / TS</span
+            ><span data-kind="kpColor">КП: 7.3</span><span data-kind="imdbColor">IMDb: 7.6</span>
+          </div>
+        </fieldset>
+        <footer>
+          <button type="submit">Сохранить</button><button type="button" id="reset">Сбросить</button
+          ><span id="status" role="status"></span>
+        </footer>
+        <p class="hint">
+          Настройки хранятся локально в расширении и применяются к открытым страницам RuTracker.
+        </p>
+      </form>
+      <!-- Список локальных отметок не зависит от сброса настроек формы. -->
+      <section class="saved">
+        <h2>Мои раздачи</h2>
+        <label
+          >Показать
+          <select id="saved-kind">
+            <option value="favorite">Избранное</option>
+            <option value="watched">Уже смотрел</option>
+          </select></label
+        >
+        <p class="hint">
+          Отметки привязаны к ID раздачи, хранятся только в этом профиле Chrome. Сброс оформления их
+          не удаляет.
+        </p>
+        <p id="saved-status" role="status"></p>
+        <ul id="saved-list"></ul>
+      </section>
+    </main>
+    <script src="settings.js"></script>
+    <script src="options.js"></script>
+  </body>
+</html>

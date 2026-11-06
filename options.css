@@ -1,0 +1,155 @@
+/* Автономное оформление popup и страницы настроек: стили сайта сюда не попадают. */
+:root {
+  color-scheme: dark;
+  font:
+    13px/1.5 system-ui,
+    sans-serif;
+  background: #151a23;
+  color: #edf3ff;
+}
+body {
+  margin: 0;
+  min-width: 360px;
+}
+main {
+  max-width: 620px;
+  padding: 20px;
+  margin: auto;
+}
+header {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-bottom: 20px;
+}
+h1 {
+  margin: 0;
+  font-size: 22px;
+}
+header p {
+  margin: 0;
+  color: #a9b8cd;
+}
+fieldset {
+  border: 1px solid #354259;
+  border-radius: 10px;
+  margin: 0 0 16px;
+  padding: 14px;
+}
+legend {
+  font-weight: 700;
+  color: #9ed5ff;
+}
+label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 8px 0;
+}
+input[type='checkbox'] {
+  accent-color: #59b5ff;
+  width: 16px;
+  height: 16px;
+}
+.hint {
+  color: #a9b8cd;
+  font-size: 12px;
+}
+select,
+button {
+  border: 1px solid #566782;
+  border-radius: 6px;
+  padding: 7px;
+  background: #25344c;
+  color: #fff;
+}
+button {
+  cursor: pointer;
+}
+button[type='submit'] {
+  background: #1463a6;
+}
+button:disabled {
+  opacity: 0.5;
+  cursor: wait;
+}
+:focus-visible {
+  outline: 2px solid #71cbff;
+  outline-offset: 3px;
+}
+.colors {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 14px;
+}
+.colors label {
+  justify-content: space-between;
+}
+input[type='color'] {
+  width: 36px;
+  height: 26px;
+  border: 0;
+  padding: 0;
+  background: none;
+  cursor: pointer;
+}
+#preview {
+  padding: 12px;
+  background: #23282d;
+  border-radius: 6px;
+}
+#preview span {
+  display: inline-block;
+  margin: 2px;
+  padding: 3px 7px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+footer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+#status {
+  color: #b6dfac;
+}
+
+.saved {
+  margin-top: 24px;
+  border-top: 1px solid #354259;
+}
+.saved h2 {
+  font-size: 18px;
+}
+#saved-list {
+  list-style: none;
+  padding: 0;
+}
+#saved-list li {
+  display: flex;
+  align-items: start;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid #354259;
+}
+#saved-list a {
+  flex: 1;
+  min-width: 0;
+  color: #9ed5ff;
+  overflow-wrap: anywhere;
+  text-decoration: none;
+}
+#saved-list button {
+  flex-shrink: 0;
+}
+
+#kp-key {
+  min-width: 0;
+  flex: 1;
+  padding: 7px;
+  border: 1px solid #566782;
+  border-radius: 5px;
+  background: #25344c;
+  color: #fff;
+}
