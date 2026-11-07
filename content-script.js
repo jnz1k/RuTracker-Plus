@@ -364,11 +364,11 @@
       const link = document.createElement('a');
       link.className = 'rtn-uhd-search';
       const url = new URL('/forum/tracker.php', location.origin);
-      url.searchParams.set('f', '1457,1940');
+      url.searchParams.set('f', '1457,1940,271,272,718,775');
       url.searchParams.set('nm', query);
       link.href = url.href;
       link.textContent = 'Найти UHD';
-      link.title = `Найти UHD: ${query} (разделы 1457 и 1940)`;
+      link.title = `Найти UHD: ${query} (разделы 1457,1940,271,272,718,775)`;
       link.target = settings.newTab ? '_blank' : '_self';
       link.rel = 'noopener noreferrer';
       const anchor = target.nextElementSibling?.classList.contains('rtn-badges')
